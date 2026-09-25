@@ -1,0 +1,1 @@
+"""Vulnerability reports cell."""

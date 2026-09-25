@@ -1,0 +1,1 @@
+"""Vulnerability patches cell."""

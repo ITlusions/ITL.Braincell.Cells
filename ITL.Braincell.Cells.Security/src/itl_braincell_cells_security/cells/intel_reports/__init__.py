@@ -1,0 +1,1 @@
+"""Intel reports cell."""

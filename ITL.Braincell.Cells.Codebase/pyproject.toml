@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "itl-braincell-cells-codebase"
+version = "0.1.0"
+description = "Codebase Intelligence cell collection for ITL BrainCell — dependencies, versions, errors, and research"
+requires-python = ">=3.12"
+dependencies = [
+    "itl-braincell-sdk>=0.1.0",
+    "fastapi>=0.127.0",
+    "pydantic>=2.12.3",
+    "sqlalchemy>=2.0.46",
+]
+authors = [
+    { name = "ITL", email = "dev@itlusions.com" }
+]
+
+[project.urls]
+Repository = "https://github.com/ITlusions/itl-braincell-cells-codebase"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["itl_braincell_cells_codebase*"]
+
+[project.entry-points."itl_braincell_sdk.cell_plugins"]
+codebase = "itl_braincell_cells_codebase.cells:plugin"

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "itl-braincell-cells-security"
+version = "0.1.0"
+description = "Security & Threat Intelligence cell collection for ITL BrainCell — threat actors, incidents, IOCs, vulnerabilities, and kill chains"
+requires-python = ">=3.12"
+dependencies = [
+    "itl-braincell-sdk>=0.1.0",
+    "fastapi>=0.127.0",
+    "pydantic>=2.12.3",
+    "sqlalchemy>=2.0.46",
+]
+authors = [
+    { name = "ITL", email = "dev@itlusions.com" }
+]
+
+[project.urls]
+Repository = "https://github.com/ITlusions/itl-braincell-cells-security"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["itl_braincell_cells_security*"]
+
+[project.entry-points."itl_braincell_sdk.cell_plugins"]
+security = "itl_braincell_cells_security.cells:plugin"
