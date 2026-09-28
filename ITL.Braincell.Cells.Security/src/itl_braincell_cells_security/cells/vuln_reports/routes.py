@@ -6,10 +6,18 @@ from uuid import UUID
 from itl_braincell_sdk.core.database import get_db
 from itl_braincell_sdk.core.pagination import Pagination
 
+from .agent import VulnReportTriageAgent
 from .model import VulnReport
 from .schema import VulnReportCreate, VulnReportResponse
 
 router = APIRouter()
+
+
+@router.post("/ai-triage", response_model=dict)
+async def ai_triage_vuln_reports(batch_size: int = 25, db: Session = Depends(get_db)):
+    """Run the LLM-based triage agent over open vulnerability reports."""
+    agent = VulnReportTriageAgent(db, batch_size=batch_size)
+    return agent.run()
 
 
 @router.get("", response_model=list[VulnReportResponse])

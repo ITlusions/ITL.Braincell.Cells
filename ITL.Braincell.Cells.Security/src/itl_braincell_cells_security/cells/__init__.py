@@ -6,7 +6,7 @@ Contributes 7 security-focused cells:
 - iocs (indicators of compromise)
 - intel_reports (intelligence briefings)
 - kill_chains (attack kill chains)
-- vuln_reports (vulnerability reports)
+- vuln_reports (vulnerability reports — includes an AI triage agent)
 - vuln_patches (security patches)
 
 The plugin instance is exported as `plugin` for entry-point discovery.

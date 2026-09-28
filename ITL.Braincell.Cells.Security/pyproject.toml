@@ -12,6 +12,7 @@ dependencies = [
     "fastapi>=0.127.0",
     "pydantic>=2.12.3",
     "sqlalchemy>=2.0.46",
+    "pydantic-ai>=0.0.14",
 ]
 authors = [
     { name = "ITL", email = "dev@itlusions.com" }
